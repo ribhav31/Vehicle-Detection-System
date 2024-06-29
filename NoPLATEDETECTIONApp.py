@@ -53,16 +53,6 @@ def detect_fn(image):
     detections = detection_model.postprocess(prediction_dict, shapes)
     return detections
 
-# Load pipeline config and build a detection model
-# configs = config_util.get_configs_from_pipeline_file(files['PIPELINE_CONFIG'])
-# detection_model = model_builder.build(model_config=configs['model'], is_training=False)
-
-# # Restore checkpoint
-# ckpt = tf.compat.v2.train.Checkpoint(model=detection_model)
-# ckpt.restore(os.path.join(paths['CHECKPOINT_PATH'], 'ckpt-11')).expect_partial()
-
-
-
 def filter_text(region, ocr_result, region_threshold):
     rectangle_size = region.shape[0] * region.shape[1]
     plate = []
